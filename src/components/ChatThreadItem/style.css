@@ -1,0 +1,104 @@
+.chat-thread-item-wrapper-outer{
+    --background-color: rgb(255, 255, 255);
+}
+
+.chat-thread-item-wrapper{
+    background: var(--background-color);
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.chat-thread-item-wrapper-innner{
+    display: flex;
+}
+
+/* middle section */
+
+.chat-thread-item-main-wrapper{
+    /* padding: 1rem; */
+    min-width: 4rem;
+    flex: 1;
+    margin-left: 1rem;
+    overflow: hidden;
+}
+
+.chat-thread-item-username{
+    font-size: 1.2rem;
+    font-family: sans-serif;
+    text-transform: capitalize;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin: 0.2rem 0rem; 
+    font-weight: 600;
+    line-height: 1;
+}
+
+.chat-thread-item-main-content{
+    margin-top: 0.5rem;
+    white-space: nowrap;
+    /* text-overflow: ellipsis; */
+    overflow: hidden;
+    margin-bottom: 0;
+    color: #969696;
+}
+
+.chat-thread-item-unread-count-wrapper,
+.chat-thread-item-menu-wrapper
+{
+    min-width: 2rem;
+    background: var(--background-color);
+    box-shadow: -8px 1px 10px 5px var(--background-color);
+}
+.chat-thread-item-unread-count{
+    width: 2rem;
+    height: 2rem;
+    font-size: 1rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #3db16b;
+    color: #fff;
+    border-radius: 50%;
+    line-height: 0;
+}
+
+.chat-thread-item-right-section{
+    position: relative;
+}
+
+.chat-thread-item-menu-wrapper{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    display: none;
+}
+
+.chat-thread-item-wrapper-outer:hover  .chat-thread-item-menu-wrapper{
+    display: block;
+}
+
+.chat-thread-item-menu-icon{
+    width: 1.5rem;
+}
+.chat-thread-item-menu-icon-wrapper-inner{
+    position: relative;
+}
+
+.chat-thread-item-menu-options-container{
+    background: var(--background-color);
+    position: absolute;
+    right: 100%;
+    filter: drop-shadow(1px 1px 3px rgb(199, 199, 199));
+    border-radius: 0.5rem;
+}
+
+.chat-thread-item-menu-option{
+    padding: 0.5rem 2rem;
+    white-space: nowrap;
+    font-family: sans-serif;
+}
+.chat-thread-item-menu-option:hover{
+    background: rgb(226, 228, 228);
+}
