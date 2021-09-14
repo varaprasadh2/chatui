@@ -1,0 +1,37 @@
+
+.chat-header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.chat-user{
+    display: flex;
+    align-items: center;
+}
+.chat-user-info{
+    margin-left: 1rem;
+}
+.chat-user-info .muted{
+    color: gray;
+}
+.chat-user-username{
+    font-size: 1.2rem;
+    font-family: sans-serif;
+    text-transform: capitalize;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin: 0.2rem 0rem; 
+    font-weight: 600;
+    line-height: 1;
+}
+.chat-user-action{
+    padding: 0.5rem;
+    width: 2rem;
+    height: 2rem;
+    background: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}

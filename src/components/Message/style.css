@@ -1,0 +1,23 @@
+.message-container{
+    max-width: 75%;
+    margin-bottom: 1rem;
+    
+}
+.message-container.outgoing{
+    margin-left: auto;
+}
+.message-body{
+    background: white;
+    padding:1rem;
+    border-radius: 0.5rem;
+}
+.message-container.outgoing .message-body{
+    background: rgb(222, 224, 224);
+}
+
+@media Screen and (max-width:768px) {
+    .message-container{
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+}

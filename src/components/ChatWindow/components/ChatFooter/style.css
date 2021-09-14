@@ -1,0 +1,35 @@
+.chat-footer{
+    display: flex;
+    background: white;
+    padding: 0.5rem;
+}
+.chat-input-container{
+    flex: 1;
+    box-sizing: border-box;
+    padding-top: 0 1rem;
+    display: flex;
+}
+
+.chat-input-container input{
+    border: none;
+    outline: none;
+    background: none;
+    flex: 1;
+    padding:0.5rem;
+    font-size: 1.2rem;
+}
+
+.chat-footer-action{
+    padding: 0.5rem;
+    background: #3db16b;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    width: 2rem;
+    height: 2rem;
+}
+.chat-footer-action.send svg{
+    fill: white !important; 
+}

@@ -1,0 +1,13 @@
+.searchbar-container{
+     width: 100%;
+}
+.searchbar input{
+    padding: 0.5rem 1rem;
+    border: none;
+    outline: none;
+    background: #ebebeb;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+}

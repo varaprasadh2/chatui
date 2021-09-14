@@ -1,0 +1,7 @@
+.chat-window-container{
+    flex: 1;
+    background: rgb(236, 236, 236);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+}

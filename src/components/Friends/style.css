@@ -1,0 +1,10 @@
+.friends-list-container{
+    padding-top: 1rem;
+}
+.search-bar-wrapper{
+    padding: 0rem 1rem;
+}
+
+.friends-list-container .title{
+    margin: 1rem;
+}

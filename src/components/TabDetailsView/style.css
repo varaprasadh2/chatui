@@ -1,0 +1,10 @@
+.tab-details-view-container{
+    width: 330px;
+    height: 100%;
+    background: white;
+    border-radius: 0.5rem;
+    overflow-y: scroll;
+}
+.tab-details-view-container::-webkit-scrollbar{
+   display: none;
+}

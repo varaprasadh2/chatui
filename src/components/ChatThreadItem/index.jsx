@@ -15,7 +15,7 @@ import Avatar from "../Avatar";
  * 
  * @prop avatar profile picture of a user
  * @prop displayName 
- * @prop message 
+ * @prop message  -> last message
  * @prop presence -> online | offline | away
  * @prop actions -> Array<Action> Action = { label:String, handler:Function }
  * 
@@ -29,8 +29,7 @@ function ThreadItem(
         message,
         unreadCount = 0, 
         presence = 'offline',
-        actions = [],
-        variant = ""   // ? friend | favourite | thread item
+        actions = []
     }) {
         
     const [showMenu, setShowMenu] = useState(false);
@@ -50,10 +49,11 @@ function ThreadItem(
                                 <h5 className="chat-thread-item-username">{displayName}</h5>
                             </div>
                             <div className="chat-thread-item-main-content">
-                            {message}
+                                {message}
                             </div>
                         </div>
                         <div className="chat-thread-item-right-section">
+
                             {unreadCount > 0 && (
                                 <div className="chat-thread-item-unread-count-wrapper">
                                     <div className="chat-thread-item-unread-count">{normalizedUnreadCount}</div>
