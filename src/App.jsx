@@ -23,7 +23,8 @@ axios.interceptors.request.use(function (config) {
   const { accessToken } = JSON.parse(localStorage.getItem('auth') || '{}');
 
   config.headers.Authorization = `Bearer ${accessToken}`;
-
+  config.withCredentials = true;
+  
   return config;
 });
 
