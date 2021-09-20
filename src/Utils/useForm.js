@@ -10,18 +10,14 @@ export const useForm = (schema) => {
         const _values = Object.keys(schema).reduce((acc, key)=> {
             return { ...acc, [key]: schema[key].initialValue || '' };
         });
-
         setValues(_values);
-
     }, []);
 
     const register = key => value => {
         setValues(prev => ({ ...prev, [key]: value.trim()}));
     };
     
-
     const validate = () => {
-        // run handlers and validate if the values do match or not.
         const _errors = Object.keys(schema).reduce((acc, key)=>{
             const value = values[key];
             const object = schema[key];
@@ -38,5 +34,8 @@ export const useForm = (schema) => {
     } 
 
     return [values, errors, register, validate];
-
 }
+
+
+
+

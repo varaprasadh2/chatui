@@ -4,11 +4,20 @@ import MessageList from './components/MessageList';
 import MessageBox from './components/MessageBox';
 import ChatHeader from './components/ChatHeader';
 
-import "./style.css";
 import { pusher, useStore } from '../../store';
 
 import axios from 'axios';
+import styled from 'styled-components';
 
+
+
+const StyledWindowContainer = styled.div`
+    flex: 1;
+    background: rgb(236, 236, 236);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+`;
 
 // subscribe to multiple channels from here ?
 
@@ -29,7 +38,7 @@ function ChatWindow() {
                 response
             });
         }catch(error){
-            console.log("something went wrong fetchign channels");
+            console.log("something went wrong fetching channels");
         }
 
     },[])
@@ -79,7 +88,7 @@ function ChatWindow() {
     }
 
     return (
-        <div className="chat-window-container">
+        <StyledWindowContainer>
             {
                 activeChannel ?  (
                     <>
@@ -98,7 +107,7 @@ function ChatWindow() {
                     )
             }
 
-        </div>
+        </StyledWindowContainer>
     )
 }
 
