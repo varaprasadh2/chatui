@@ -18,7 +18,7 @@ import { useStore } from '../../store';
 const TABS = {
     "CHAT" : "Chat",
     "FRIENDS": "Friends",
-    "FAVOURITES": "Favourites",
+    "FAVORITES": "Favorites",
     "EDIT_PROFILE":"Edit Profile",
     "SETTINGS":"Settings",
     "LOGOUT":"Logout"
@@ -45,7 +45,7 @@ function SideBar({ }) {
     }
 
     const handleTabChange = (tab) => {
-        if(tab === TABS.CHAT || tab === TABS.FAVOURITES || tab === TABS.FRIENDS){
+        if(tab === TABS.CHAT || tab === TABS.FAVORITES || tab === TABS.FRIENDS){
             console.log({
                 history, tab
             })
@@ -61,7 +61,7 @@ function SideBar({ }) {
             <div className="sidebar-item-group">
                 <SideBarItem active={activetab === TABS.CHAT} icon={<ChatIcon/>} label={TABS.CHAT} onClick={handleTabChange}/>
                 <SideBarItem active={activetab === TABS.FRIENDS} icon={<PersonIcon/>} label={TABS.FRIENDS} onClick={handleTabChange}/>
-                <SideBarItem active={activetab === TABS.FAVOURITES} icon={<StarIcon/>} label={TABS.FAVOURITES} onClick={handleTabChange}/>
+                <SideBarItem active={activetab === TABS.FAVORITES} icon={<StarIcon/>} label={TABS.FAVORITES} onClick={handleTabChange}/>
             </div>
             <div className="sidebar-item-group bottom">
                 <SideBarItem icon={<PencilIcon/>} label={TABS.EDIT_PROFILE} onClick={handleTabChange}/>

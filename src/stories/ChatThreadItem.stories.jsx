@@ -1,9 +1,9 @@
-import ChatThreadItem from "../components/ChatThreadItem";
+import Channel from "../components/Channel";
 
 
 export default {
     title: 'chat ui guide/ChatThreadItem',
-    component: ChatThreadItem,
+    component: Channel,
     argTypes: {
         displayName : { control: "text" },
         message : { control: "text" },
@@ -12,7 +12,7 @@ export default {
     },
   };
 
-const Template = (args) => <ChatThreadItem {...args} />;
+const Template = (args) => <Channel {...args} />;
 
 export const ChatThreadItemOnline = Template.bind({});
 export const ChatThreadItemOffline = Template.bind({});

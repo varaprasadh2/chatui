@@ -1,0 +1,28 @@
+//channel action types
+
+
+export const CHANNEL_PRESENCE_CHANGE = "CHANNEL_PRESENCE_CHANGE";
+export const CHANNEL_SET_ACTIVE = "CHANNEL_SET_ACTIVE";
+
+export const CHANNEL_NEW_MESSAGE = "CHANNEL_NEW_MESSAGE";
+export const CHANNEL_DELETE_MESSAGE = "CHANNEL_DELETE_MESSAGE";
+export const CHANNEL_UPDATE_MESSAGE = "CHANNEL_UPDATE_MESSAGE"; // ? NO UPDATE FOR NOW
+
+
+
+
+// presence
+export const PRESENCE_CHANGE = "PRESENCE_CHANGE" // 
+
+
+// TODO: ADD MORE TYPES
+
+
+
+// global actions
+
+export const SET_USER = "SET_USER";
+export const RESET_USER = "RESET_USER";
+
+
+

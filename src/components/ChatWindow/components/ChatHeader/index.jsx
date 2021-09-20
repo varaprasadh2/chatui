@@ -6,17 +6,22 @@ import { ReactComponent as MoreIcon } from "../../../../assets/icons/themify/SVG
 
 
 // chatuser chatuseractions
-function ChatHeader() {
+function ChatHeader({
+    avatar, 
+    lastActive =  "offline", // time stamp or online or offline
+    displayName,
+    actions = [],
+}) {
     return (
         <div className="chat-header-container">
             <div className="chat-header">
                 <div className="chat-user">
                     <div className="chat-user-avatar">
-                        <Avatar/> {/* TODO */}
+                        <Avatar avatar={avatar}/> {/* TODO */}
                     </div>
                     <div className="chat-user-info">
-                        <h5 className="chat-user-username">john doe</h5>
-                        <i className="muted">online</i>
+                        <h5 className="chat-user-username">{displayName}</h5>
+                        <i className="muted">{lastActive}</i>
                     </div>
                 </div>
                 <div className="chat-user-actions">

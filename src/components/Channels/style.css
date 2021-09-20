@@ -7,3 +7,12 @@
 .search-bar-wrapper{
     padding: 0rem 1rem;
 }
+.action-section{
+    padding-bottom: 1rem;
+}
+
+.channels-fallback{
+    padding: 1rem;
+    text-align: center;
+    color: gray;
+}

@@ -22,14 +22,17 @@ import Avatar from "../Avatar";
  * 
  */ 
 
-function ThreadItem(
+function Channel(
     { 
+        type = 'direct',
         avatar, 
         displayName ,
-        message,
+        lastMessage,
         unreadCount = 0, 
         presence = 'offline',
-        actions = []
+        active = false,
+        actions = [],
+        onSelect = () => {}
     }) {
         
     const [showMenu, setShowMenu] = useState(false);
@@ -38,7 +41,8 @@ function ThreadItem(
 
     return (
         <OutsideClickHandler  onOutsideClick={()=>setShowMenu(false)}>
-            <div className="chat-thread-item-wrapper-outer">
+            <div className={`chat-thread-item-wrapper-outer ${active ? 'active':''}`} onClick={onSelect}>
+                {/* <div className="thread-active-indicator"></div> */}
                 <div className="chat-thread-item-wrapper">
                     <div className="chat-thread-item-wrapper-innner">
                         <div>
@@ -49,7 +53,9 @@ function ThreadItem(
                                 <h5 className="chat-thread-item-username">{displayName}</h5>
                             </div>
                             <div className="chat-thread-item-main-content">
-                                {message}
+                                {
+                                    lastMessage ? lastMessage.message.type == "text" ? lastMessage.message.content : "TODO: media render" : "start conversation..."
+                                }
                             </div>
                         </div>
                         <div className="chat-thread-item-right-section">
@@ -90,5 +96,5 @@ function ThreadItem(
     )
 }
 
-export default ThreadItem;
+export default Channel;
 
