@@ -12,7 +12,7 @@ import styled from "styled-components";
 import { Center, Row } from '../../components/LayoutUtils';
 import { useHistory } from 'react-router';
 import { useStore } from '../../store';
-import { setUser } from '../../store/actions/global';
+import { setUser } from '../../store/actions/app';
 import { useForm } from '../../Utils/useForm';
 
 
@@ -184,13 +184,14 @@ function SignUpForm(){
         setLoading(true);
         try{
 
-            const response = await axios.post("/signup", values).then(res => res.data);
+            const response = await axios.post("/signup", values).then(res => res.data).catch(error => { throw error.data});
+
             const { user, auth } = response;
             dispatch(setUser(user));
             localStorage.setItem('auth', JSON.stringify(auth));
             history.push("/");
         }catch(error){
-            console.error(error);
+            alert("something went wrong, try again with another email!");
         }finally{
             setLoading(false);
         }
@@ -255,7 +256,7 @@ function SignUpForm(){
             </StyledFormBody>
             <StyledFormFooter>
                 <Button
-                    label={"Sign in"}
+                    label={"Sign Up"}
                     backgroundColor={'#3db16b'}
                     color={'white'}
                     onClick={submit}

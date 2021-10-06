@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React from 'react';
 
 // styles
 import "./style.css";
@@ -14,21 +14,20 @@ import "./style.css";
 
 
 // temporary props
-function Message({ message }){
+function Message({ message, outgoing }){
 
-    const { message: messageBody, author } = message;
-
-    const outgoing = author.self;
-    const content = messageBody.content;
+    console.log({
+        message
+    });
     
     return (
         <div className={`message-container ${outgoing ? 'outgoing' : ''}`}>
             <div className="message-body">
-                {content}
+                {message.body}
             </div>
             <div className="message-action">
                 <div className="message-meta-info">
-                    <div className="meta-time">12:09 PM</div>
+                    <div className="meta-time">{(new Date(message.createdAt)).toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })}</div>
                     <div className="meta-status">
                         
                     </div>

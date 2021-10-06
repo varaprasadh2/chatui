@@ -21,69 +21,24 @@ const StyledWindowContainer = styled.div`
 
 // subscribe to multiple channels from here ?
 
-const pusher_channel = pusher.subscribe("presence-pusher-channel");
-
-
 function ChatWindow() {
     // make a hook to getActive channel info 
 
     // TODO: 
     const activeChannel = useActiveChannel();
     const [store, dispatch] = useStore();
-
-    useEffect(async ()=>{
-        try{
-            const response = await axios.get("/channels").then(res => res.data);
-            console.log({
-                response
-            });
-        }catch(error){
-            console.log("something went wrong fetching channels");
-        }
-
-    },[])
-
-    useEffect(()=>{
-
-        pusher_channel.bind('message', (message)=>{
-            console.log("debug", {
-                message
-            });
-            dispatch({
-                type: "CHANNEL_NEW_MESSAGE",
-                payload: {
-                    ...message,
-                    currentUser: store.user
-                }
-            });
-        });    
-        return () => pusher_channel.unbind('message', ()=>{});
-    },[])
     
-
-    console.log({
-        activeChannel
-    });
-
-    const onSend = async message => {
+    const onSend = async ({ body, files }) => {
         // do api call
-        console.log(message);
         const payload = {
-            channel_id: activeChannel.id,
-            message: message,
-            author: {
-                user_id: store.user.id
-            }
+            channelId: activeChannel.id,
+            body: body,
+            files,
+            channelType: activeChannel.type
         }
 
         // handle media types
-        await fetch("http://localhost:3001/message", {
-            method: "post",
-            headers: {
-                "content-type": "application/json"
-            },
-            body: JSON.stringify(payload),
-        });
+        await axios.post("/message", payload);
 
     }
 
@@ -93,18 +48,14 @@ function ChatWindow() {
                 activeChannel ?  (
                     <>
                         <ChatHeader
-                            displayName={activeChannel.channel_name}
+                            displayName={activeChannel.displayName}
+                            avatar={activeChannel.avatar}
+                            actions={[]}
                         />
-                        <MessageList
-
-                        />
+                        <MessageList />
                         <MessageBox onSend = {onSend} />
                     </>
-                ) : (
-
-                    <div className="chat-fallback">Star a Conversation ...</div>
-                    
-                    )
+                ) : (<div className="chat-fallback">Star a Conversation ...</div>)
             }
 
         </StyledWindowContainer>

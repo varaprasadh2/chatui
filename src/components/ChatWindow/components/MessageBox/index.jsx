@@ -14,13 +14,12 @@ function MessageBox({ onSend }) {
         if(text.trim() === "") return;
 
         const message = {
-            type: "text",
-            content: text
+            body: text,
+            files: []
         };
 
         setText("");
         typeof onSend === 'function' && onSend(message);
-
     }
     return (
         <div className="chat-footer-container">

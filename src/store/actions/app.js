@@ -7,5 +7,9 @@ export const setUser = (user) => ({
     }
 });
 
-
-
+export const setUserChannel = (channel) => ({
+    type: actionTypes.SET_USER_CHANNEL,
+    payload: {
+        channel: channel
+    }
+});

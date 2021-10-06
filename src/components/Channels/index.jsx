@@ -64,7 +64,7 @@ function Channels() {
                             return (
                                 <Channel
                                     key={channel.id}
-                                    displayName={channel.channel_name}
+                                    displayName={channel.displayName}
                                     actions={actions}
                                     lastMessage={channel.lastMessage}
                                     type={channel.type}
